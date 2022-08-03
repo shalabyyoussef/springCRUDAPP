@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: hrproject
+spec:
+  selector:
+    matchLabels:
+      app: hrproject
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: hrproject
+    spec:
+      containers:
+        - name: hrproject 
+          image: shalaby1234/spring-boot-test:last1 
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8082
